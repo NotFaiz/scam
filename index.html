@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Congratulations! You've Won!</title>
+  <style>
+    body {
+      background-color: #fff8dc;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .popup, .adbanner, .blinking {
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    .header {
+      background: red;
+      color: yellow;
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 1px 1px 5px black;
+    }
+    .adswrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+      justify-content: center;
+    }
+    .ad {
+      background: #ffff00;
+      border: 5px solid #ff0000;
+      padding: 20px;
+      width: 280px;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff0000;
+    }
+    .popup {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #00ff00;
+      color: black;
+      text-align: center;
+      padding: 15px;
+      z-index: 9999;
+    }
+    .flaotAd {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 220px;
+      background: #ff69b4;
+      border: 3px dashed #000;
+      padding: 10px;
+      z-index: 10000;
+      font-weight: bold;
+      box-shadow: 0 0 15px magenta;
+    }
+    .button {
+      background: #ff0000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      font-size: 1em;
+      margin-top: 10px;
+      cursor: pointer;
+      animation: blink 0.5s infinite;
+    }
+    .countdown {
+      font-size: 1.5em;
+      color: red;
+      font-weight: bold;
+    }
+    .chbot {
+      position: fixed;
+      bottom: 60px;
+      left: 20px;
+      background: #fff;
+      border: 2px solid #333;
+      padding: 10px;
+      width: 260px;
+      z-index: 9998;
+      box-shadow: 0 0 5px #000;
+    }
+    .chbotheader {
+      background: #222;
+      color: #0f0;
+      padding: 5px;
+      font-weight: bold;
+    }
+    .chbotmsg {
+      padding: 5px;
+      font-size: 0.9em;
+    }
+    .ticker {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      color: #0f0;
+      white-space: nowrap;
+      overflow: hidden;
+      z-index: 10001;
+    }
+    .tickertext {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll 15s linear infinite;
+    }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="ticker"><div class="tickertext">⚠️ URGENT: YOU'VE BEEN SELECTED TO RECEIVE A FREE IPHONE 17 - ACT NOW! ⚠️ Limited Time Offer! ⚠️</div></div>
+  <div class="header blinking">CONGRATULATIONS!!! CLAIM YOUR IPHONE 17 NOW!!!</div>
+  <div class="adswrap">
+    <div class="ad">You are the 999,999th visitor! Click here!</div>
+    <div class="ad">Spin the wheel to win $1000!</div>
+    <div class="ad">Warning: Your device may be infected!</div>
+    <div class="ad">Get a free PS5! Limited offer!</div>
+    <div class="ad">Exclusive deal for you! Act now!</div>
+    <div class="ad">You have 1 unclaimed prize!</div>
+    <div class="ad">Your McDonald's voucher is ready!</div>
+    <div class="ad">🚨 Only 5 left in stock – grab your reward!</div>
+    <div class="ad">💸 Make $500/day from home – click now!</div>
+    <div class="ad">📦 Parcel lost? Track it here urgently!</div>
+    <div class="ad">You're getting touched tonight! Claim to get touched inappropriately!</div>
+  </div>
+  <div class="popup">
+    Alert: You have won a $100 Walmart Gift Card! Click to claim!
+    <button class="button">CLAIM NOW</button>
+    <div class="countdown">Time left: <span id="countdown">60</span> seconds!</div>
+  </div>
+  <div class="flaotAd">
+    💥 HOT DEAL 💥<br>
+    click now to get rich overnight!
+    <button class="button">CLICK HERE</button>
+  </div>
+  <div class="chbot">
+    <div class="chbotheader">Support Agent 👩‍💻</div>
+    <div class="chbotmsg">Hi! 👋 Need help claiming your prize?</div>
+    <div class="chbotmsg">just send me your email and SSN 😉</div>
+  </div>
+  <script>
+    let timeLeft = 60;
+    const countdownEl = document.getElementById('countdown');
+    setInterval(() => {
+      if (timeLeft > 0) {
+        timeLeft--;
+        countdownEl.textContent = timeLeft;
+      } else {
+        countdownEl.textContent = 'EXPIRED';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
